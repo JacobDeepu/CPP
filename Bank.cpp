@@ -3,59 +3,54 @@ using namespace std;
 class bank
 {
     private:
-    int acc;
+    int account_num;
     char name[20];
-    float bal,dep;
+    float balance,amount;
     public:
-    bank()
-    {
-        acc=0;
-        bal=0.00;
-        dep=0.00;
-    }
-    void accountnum()
+    void getaccountnumber()
     {
         cout<<"\nEnter the Account number:";
-        cin>>acc;
+        cin>>account_num;
     }
-    void input()
+    void input_details()
     {
         cout<<"\nEnter the Name:";
         cin>>name;
-        cout<<"\nEnter first deposit amount:";
+        cout<<"\nEnter Initial Deposit:";
         cin>>bal;
-        cout<<"\nAccount Created!\n";
+        cout<<"\n\tAccount Created\n";
     }
-    void deposit()
+    void deposit_money()
     {
-        cout<<"\nEnter the amount to be deposited:";
-        cin>>dep;
-        bal=bal+dep;
+        cout<<"\nEnter the Deposit Amount:";
+        cin>>amount;
+        balance+=amount;
     }
-    void withdraw()
+    void withdraw_money()
     {
-        cout<<"Available balance:"<<bal;
-        cout<<"\nEnter the amount to withdraw:";
-        cin>>dep;
-        if(dep<bal)
+        cout<<"Available balance:"<<balance;
+        cout<<"\nEnter the Amount to withdraw:";
+        cin>>amount;
+        if(amount>balance)
         {
-            bal=bal-dep;
+            balance-=amount;
         }
         else
         {
-            cout<<"Low balance!";
+            cout<<"\tLow balance!";
         }
     }
-    void display()
+    void display_details()
     {
-        cout<<"\nAccount number:"<<acc;
-        cout<<endl<<"Name:"<<name<<endl<<"Account Balance:"<<bal;
+        cout<<"\nAccount number:"<<account_num;
+        cout<<"\nName:"<<name;
+	cout<<"\nAccount Balance:"<<balance;
     }
-    int check(bank b[])
+    int check_accountnum(bank b[])
     {
         for(int i=1;i<10;i++)
         {
-            if(acc==b[i].acc)
+            if(account_num==b[i].account_num)
             {
                 return i;
             }
@@ -64,70 +59,71 @@ class bank
 };
 int menu()
     {
-        int op;
+        int option;
         cout<<"\n1.Create Account\n";
         cout<<"2.Deposit\n";
         cout<<"3.Withdraw\n";
         cout<<"4.Acount details\n";
         cout<<"5.Exit\n";
         cout<<"Choose your Option:";
-        cin>>op;
-        return op;
+        cin>>option;
+        return option;
     }
 int main()
 {
     bank b[10];
-    int op=1,i=0,a,j;
-    while(op!=5)
+    int option=1;
+    int i=0,a;
+    while(option!=5)
     {
-        op=menu();
-        if(op==1)
+        option=menu();
+        if(option==1)
         {
             i++;
             a=i;
-            b[i].accountnum();
-            b[i].input();
+            b[i].getaccountnumber();
+            b[i].input_details();
         }
-        else if(op==2)
+        else if(option==2)
         {
             j=i=0;
             b[0].accountnum();
-            i=b[0].check(b);
-            if(i!=j)
+            i=b[0].check_accountnum(b);
+            if(i!=0)
             {
-                b[i].deposit();
+                b[i].deposit_money();
             }
             else
             {
-                cout<<"Invalid Account Number\n";
+                cout<<"\tInvalid Account Number\n";
             }
         }
-        else if(op==3)
+        else if(option==3)
         {
-            j=i=0;
-            b[0].accountnum();
-            i=b[0].check(b);
-            if(i!=j)
+            i=0;
+            b[0].getaccountnumber();
+            i=b[0].check_accountnum(b);
+            if(i!=0)
             {
-                b[i].withdraw();
+                b[i].withdraw_money();
             }
             else
             {
-                cout<<"Invalid Account Number\n";
+                cout<<"\tInvalid Account Number\n";
             }
         }
-        else if(op==4)
+        else if(option==4)
         {
-            j=i=0;
-            b[0].accountnum();
-            i=b[0].check(b);
-            if(i!=j)
+            i=0;
+            b[0].getaccountnumber();
+            i=b[0].check_accountnum(b);
+            if(i!=0)
             {
-                b[i].display();
+                b[i].display_details();
             }
             else
             {
-                cout<<"Invalid Account Number\n";
+                cout<<"\tInvalid Account Number\n";
             }
         }
         i=a;
