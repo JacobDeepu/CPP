@@ -1,0 +1,17 @@
+Program to add two complex numbers using member function.
+
+Algorithm:
+
+    Step 1: Start
+    Step 2: Create a class Complex which will store the real and imaginary part of the complex number.
+    Step 3: In first method, the user has to provide real and imaginary part as input for both the complex numbers.
+    Step 4: Second method is sum, which will add two complex numbers passed in the arguments. Here, the real part of first complex number will be added with the real part of second one, similarly the imaginary part of first complex number will be added with the imaginary part of second complex number.
+    Step 5: The third method displays the sum output.
+
+Output:
+
+    Enter the Complex number: 3
+    -4
+    Enter the Complex number: 2
+    8
+    5+4i
