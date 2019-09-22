@@ -1,0 +1,17 @@
+Program to find length of a given string without using string functions.
+
+Algorithm:
+
+    Step 1: Start
+    Step 2: Create class, with string data type member s1 and member functions to read and find length of string.
+    Step 3: Length=0
+    Step 4: Input string s1
+    Step 5: Repeat step 6 while s1[length] not Null
+    Step 6: length=length+1
+    Step 7: Output length
+    Step 8: Stop
+
+Output:
+
+    Enter the string: Jacob Deepu
+    Length of string = 11
