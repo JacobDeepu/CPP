@@ -4,26 +4,25 @@ class Mytime
 {
     private:
         int hr,min,sec;
+        string format;
     public:
-        Mytime();
         void inputTime();
         Mytime operator +(Mytime);
         void outputTime();
 };
-Mytime :: Mytime()
-{
-    hr=0;
-    min=0;
-    sec=0;
-}
 void Mytime :: inputTime()
 {
     cout<<"Enter the time:";
     cin>>hr>>min>>sec;
+    if(hr<=12)
+    {
+        cout<<"Is it am or pm:";
+        cin>>format;
+    }
 }
 void Mytime :: outputTime()
 {
-    cout<<hr<<" : "<<min<<" : "<<sec;
+    cout<<hr<<" : "<<min<<" : "<<sec<<format;
 }
 Mytime Mytime :: operator +(Mytime x)
 {

@@ -1,0 +1,38 @@
+Program to find area of Triangle 2.Rectangle 3.Square
+
+Agorithm:
+
+    STEP 1: Start
+    STEP 2: Declare the class name as Geometric with data members and member functions.
+    STEP 3: Read the choice from the user.
+    STEP 4: Choice=1 then go to step 5.
+    STEP 5: The function area() to find area of circle with one float argument.
+    STEP 6: Choice=2 then go to step 7.
+    STEP 7: The function area() to find area of rectangle with two integer argument.
+    STEP 8: Choice=3 then go to step 9.
+    STEP 9: The function area() to find area of square with one integer arguments.
+    STEP 10: Choice=4 then go to step 11.
+    STEP 11: The function area() to find area of triangle with one integer arguments and one float argument.
+    STEP 12: Choice=5 then go to step 13.
+    STEP 13: Stop
+
+Output:
+
+    **************************
+    1. Area of Circle.      
+    2. Area of Rectangle.   
+    3. Area of Triangle.    
+    4. Area of Square.      
+    5. Exit.
+    **** Enter the choice ****
+    1
+    Enter the Radius of the circle:3
+    Area of Circle= 28.26     
+    **************************
+    1. Area of Circle.      
+    2. Area of Rectangle.   
+    3. Area of Triangle.    
+    4. Area of Square.      
+    5. Exit.
+    **** Enter the choice ****
+    5

@@ -7,15 +7,15 @@ class Complex
     public:
         void inputComplexNumber();
         void sum(Complex,Complex);
-        void outputComplexNumber();
-        friend Complex operator +(Complex,Complex);
+        void display();
+        friend Complex sum(Complex,Complex);
 };
 void Complex :: inputComplexNumber()
 {
     cout<<"Enter the Complex number: ";
     cin>>real>>imaginary;
 }
-void Complex :: outputComplexNumber()
+void Complex :: display()
 {
     if(imaginary>0)
         cout<<"Sum= "<<real<<"+"<<imaginary<<"i"<<endl;
@@ -27,7 +27,7 @@ void Complex :: sum(Complex x,Complex y)
     real=x.real+y.real;
     imaginary=x.imaginary+y.imaginary;
 }
-Complex operator +(Complex x,Complex y)
+Complex sum(Complex x,Complex y)
 {
     Complex z;
     z.real=x.real+y.real;
@@ -40,8 +40,8 @@ int main()
     c1.inputComplexNumber();
     c2.inputComplexNumber();
     c3.sum(c1,c2);
-    c3.outputComplexNumber();
-    c4=c1+c2;
-    c4.outputComplexNumber();
+    c3.display();
+    c4.sum(c1,c2);
+    c4.display();
     return 0;
 }
